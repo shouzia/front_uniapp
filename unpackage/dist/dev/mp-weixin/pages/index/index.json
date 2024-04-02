@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "网上花店微信小程序首页",
+  "usingComponents": {
+    "uni-icons": "/components/uni-ui/lib/uni-icons/uni-icons"
+  }
+}

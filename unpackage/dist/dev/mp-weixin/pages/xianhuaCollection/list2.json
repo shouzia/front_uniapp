@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我的鲜花收藏",
+  "usingComponents": {
+    "mescroll-uni": "/components/mescroll-uni/mescroll-uni"
+  }
+}
