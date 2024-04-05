@@ -39,7 +39,7 @@ page {
   background-position: center;
 }
 .header {
-  background-color: #ff6364;
+  background-color: #9cc8ff;
   width: 100%;
   height: 30vw;
   padding: 0 4%;

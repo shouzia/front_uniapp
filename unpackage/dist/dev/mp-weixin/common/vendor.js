@@ -10453,25 +10453,38 @@ var menu = {
           "tableName": "chat"
         }],
         "menu": "客服聊天"
-      }, {
-        "child": [{
-          "appFrontIcon": "cuIcon-form",
-          "buttons": ["查看"],
-          "menu": "公告信息",
-          "menuJump": "列表",
-          "tableName": "gonggao"
-        }],
-        "menu": "公告信息"
-      }, {
-        "child": [{
-          "appFrontIcon": "cuIcon-form",
-          "buttons": ["查看"],
-          "menu": "鲜花",
-          "menuJump": "列表",
-          "tableName": "xianhua"
-        }],
-        "menu": "鲜花"
-      }, {
+      },
+      // {
+      //     "child": [
+      //         {
+      //             "appFrontIcon": "cuIcon-form",
+      //             "buttons": [
+      //                 "查看"
+      //             ],
+      //             "menu": "公告信息",
+      //             "menuJump": "列表",
+      //             "tableName": "gonggao"
+      //         }
+      //     ],
+      //     "menu": "公告信息"
+      // }
+      // ,
+      // {
+      //     "child": [
+      //         {
+      //             "appFrontIcon": "cuIcon-form",
+      //             "buttons": [
+      //                 "查看"
+      //             ],
+      //             "menu": "鲜花",
+      //             "menuJump": "列表",
+      //             "tableName": "xianhua"
+      //         }
+      //     ],
+      //     "menu": "鲜花"
+      // }
+      // ,
+      {
         "child": [{
           "appFrontIcon": "cuIcon-favor",
           "buttons": ["查看", "删除"],

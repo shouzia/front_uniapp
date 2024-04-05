@@ -208,6 +208,39 @@ var _menu = _interopRequireDefault(__webpack_require__(/*! @/utils/menu */ 39));
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {

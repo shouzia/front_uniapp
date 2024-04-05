@@ -398,172 +398,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* product */
 page {
     background: #EEEEEE;
@@ -571,7 +405,7 @@ page {
 view {
     font-size: 28rpx;
 }
-.daxiao{
+.daxiao {
     width: 100%;
     padding: 0 10rpx;
 }
@@ -598,11 +432,11 @@ view {
     border-radius: 0 40rpx 40rpx 0;
     border-width: 0;
     border-style: solid;
-    border-color: rgba(0,0,0,1);
+    border-color: rgba(0, 0, 0, 1);
     background-color: var(--publicSubColor);
-    box-shadow: 0 0 0px rgba(0,0,0,.3);
+    box-shadow: 0 0 0px rgba(0, 0, 0, .3);
 }
-.tabActive{
+.tabActive {
     margin: 0 12rpx 8rpx 0;
     padding: 0 10rpx;
     width: auto;
@@ -612,9 +446,9 @@ view {
     border-radius: 0 40rpx 40rpx 0;
     border-width: 0;
     border-style: solid;
-    border-color: rgba(0,0,0,1);
+    border-color: rgba(0, 0, 0, 1);
     background-color: var(--publicMainColor);
-    box-shadow: 0 0 0px rgba(0,0,0,.3);
+    box-shadow: 0 0 0px rgba(0, 0, 0, .3);
 }
 /* 按钮条件查询样式------------------------结束 */
 .tab:last-of-type {
@@ -626,7 +460,6 @@ view {
     flex-wrap: wrap;
     flex-direction: row;
     margin-top: 0rpx;
-/* justify-content: space-around; */
 }
 .uni-product {
     padding: 10rpx;
@@ -676,7 +509,8 @@ view {
     padding: 0 10rpx;
     border-radius: 5rpx;
 }
-uni-image > ._div, uni-image > ._img {
+uni-image>._div,
+uni-image>._img {
     width: 100%;
     height: 140px;
     object-fit: cover;
@@ -685,13 +519,9 @@ uni-image > ._div, uni-image > ._img {
     position: fixed;
     left: 30rpx;
     right: 30rpx;
-
-
-
-
-bottom: 16rpx;
-
-z-index: 95;
+    bottom: 106rpx;
+    bottom: 16rpx;
+    z-index: 95;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -719,7 +549,6 @@ z-index: 95;
     margin-right: 20rpx;
 }
 .listmr {
-/* width: 460upx; */
     display: inline-block;
     flex: 1;
     display: flex;
