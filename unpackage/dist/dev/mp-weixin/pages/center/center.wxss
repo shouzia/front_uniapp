@@ -165,7 +165,7 @@ page {
   border-bottom: solid 1rpx #e7e7e7;
   display: flex;
   align-items: center;
-  background: #FFFFFF;
+  background: #ffffff;
   font-size: 33rpx;
   flex-wrap: wrap;
 }

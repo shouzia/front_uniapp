@@ -204,7 +204,7 @@ var _default = {
           switch (_context.prev = _context.next) {
             case 0:
               _this = _this2;
-              table = uni.getStorageSync("nowTable"); // 获取用户信息
+              table = uni.getStorageSync('nowTable'); // 获取用户信息
               _context.next = 4;
               return _this.$api.session(table);
             case 4:

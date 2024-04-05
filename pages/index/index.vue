@@ -515,7 +515,6 @@ view {
 }
 
 .listmr {
-  // width: 460upx;
   display: inline-block;
   flex: 1;
   display: flex;
@@ -585,7 +584,6 @@ view {
 .image-view {
   height: 321upx;
   width: 321upx;
-  // margin: 12upx 0;
   display: flex;
   align-items: center;
   overflow: hidden;

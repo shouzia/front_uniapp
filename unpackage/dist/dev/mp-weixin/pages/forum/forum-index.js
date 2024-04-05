@@ -242,6 +242,7 @@ __webpack_require__(/*! @/assets/css/global-restaurant.css */ 185);
 //
 //
 //
+//
 var uniIcons = function uniIcons() {
   Promise.all(/*! require.ensure | components/uni-ui/lib/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-ui/lib/uni-icons/uni-icons")]).then((function () {
     return resolve(__webpack_require__(/*! @/components/uni-ui/lib/uni-icons/uni-icons.vue */ 424));
@@ -323,7 +324,7 @@ var _default = {
                   limit: mescroll.size
                 };
                 _context2.next = 3;
-                return _this3.$api.list("forum", params);
+                return _this3.$api.list('forum', params);
               case 3:
                 res = _context2.sent;
                 // 如果是第一页数据置空
@@ -365,7 +366,7 @@ var _default = {
                   forumName: _this.searchForm.forumName
                 };
                 _context3.next = 6;
-                return _this.$api.list("forum", params);
+                return _this.$api.list('forum', params);
               case 6:
                 res = _context3.sent;
                 _this.list = _this.list.concat(res.data.list);

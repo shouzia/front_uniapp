@@ -263,43 +263,43 @@ var _default = {
     return {
       user: {},
       //当前登录表的所有参数
-      sessionTable: uni.getStorageSync("nowTable"),
+      sessionTable: uni.getStorageSync('nowTable'),
       //登录账户所在表名
-      role: uni.getStorageSync("role"),
+      role: uni.getStorageSync('role'),
       //权限
-      userId: uni.getStorageSync("userid"),
+      userId: uni.getStorageSync('userid'),
       //当前登录人的id
       btnColor: ['#67c23a', '#909399', '#e6a23c', '#f56c6c', '#356c6c', '#3498db', '#f093a9', '#a7c23a', '#104eff', '#90f794', '#a21233', '#8e44ad'],
       queryList: [{
-        queryName: "鲜花评价名称"
+        queryName: '鲜花评价名称'
       }],
       sactiveItem: {
-        "padding": "0",
-        "boxShadow": "0 0 0px rgba(0,0,0,.3)",
-        "margin": "0 10rpx",
-        "borderColor": "rgba(0,0,0,1)",
-        "backgroundColor": "var(--publicMainColor)",
-        "color": "#fff",
-        "borderRadius": "0 40rpx 40rpx 0",
-        "borderWidth": "0",
-        "width": "auto",
-        "lineHeight": "160rpx",
-        "fontSize": "28rpx",
-        "borderStyle": "solid"
+        padding: '0',
+        boxShadow: '0 0 0px rgba(0,0,0,.3)',
+        margin: '0 10rpx',
+        borderColor: 'rgba(0,0,0,1)',
+        backgroundColor: 'var(--publicMainColor)',
+        color: '#fff',
+        borderRadius: '0 40rpx 40rpx 0',
+        borderWidth: '0',
+        width: 'auto',
+        lineHeight: '160rpx',
+        fontSize: '28rpx',
+        borderStyle: 'solid'
       },
       sitem: {
-        "padding": "0",
-        "boxShadow": "0 0 0px rgba(0,0,0,.3)",
-        "margin": "0 10rpx",
-        "borderColor": "rgba(0,0,0,1)",
-        "backgroundColor": "var(--publicSubColor)",
-        "color": "#fff",
-        "borderRadius": "0 40rpx 40rpx 0",
-        "borderWidth": "0",
-        "width": "auto",
-        "lineHeight": "160rpx",
-        "fontSize": "28rpx",
-        "borderStyle": "solid"
+        padding: '0',
+        boxShadow: '0 0 0px rgba(0,0,0,.3)',
+        margin: '0 10rpx',
+        borderColor: 'rgba(0,0,0,1)',
+        backgroundColor: 'var(--publicSubColor)',
+        color: '#fff',
+        borderRadius: '0 40rpx 40rpx 0',
+        borderWidth: '0',
+        width: 'auto',
+        lineHeight: '160rpx',
+        fontSize: '28rpx',
+        borderStyle: 'solid'
       },
       list: [],
       mescroll: null,
@@ -325,7 +325,7 @@ var _default = {
       //数据
       //您可以通过修改 config-ucharts.js 文件中下标为 ['column'] 的节点来配置全局默认参数，如都是默认参数，此处可以不传 opts 。实际应用过程中 opts 只需传入与全局默认参数中不一致的【某一个属性】即可实现同类型的图表显示不同的样式，达到页面简洁的需求。
       opts: {
-        color: ["#1890FF", "#91CB74", "#FAC858", "#EE6666", "#73C0DE", "#3CA272", "#FC8452", "#9A60B4", "#ea7ccc"],
+        color: ['#1890FF', '#91CB74', '#FAC858', '#EE6666', '#73C0DE', '#3CA272', '#FC8452', '#9A60B4', '#ea7ccc'],
         enableScroll: false,
         // //柱状图
         // padding:[15,15,0,5],legend:{},xAxis:{disableGrid:true},yAxis:{data:[{min:0}]},extra:{column:{type:"group",width:30,activeBgColor:"#000000",activeBgOpacity:0.08}},
@@ -338,7 +338,7 @@ var _default = {
             labelWidth: 15,
             border: false,
             borderWidth: 3,
-            borderColor: "#FFFFFF"
+            borderColor: '#FFFFFF'
           }
         }
       }
@@ -361,7 +361,7 @@ var _default = {
                 return 0.5 - Math.random();
               });
               _this = _this2;
-              table = uni.getStorageSync("nowTable"); // 获取用户信息
+              table = uni.getStorageSync('nowTable'); // 获取用户信息
               _context.next = 5;
               return _this.$api.session(table);
             case 5:
@@ -421,7 +421,7 @@ var _default = {
               case 0:
                 _this = _this4;
                 _context3.next = 3;
-                return _this.$api.requestConditionDataGet("", 'newSelectGroupSum', null, {
+                return _this.$api.requestConditionDataGet('', 'newSelectGroupSum', null, {
                   tableName: 'xianhua_commentback_shouzhi',
                   groupColumn: 'xianhua_commentback_types',
                   // sumColumn:'xianhua_commentback_number',
@@ -498,7 +498,7 @@ var _default = {
     },
     //查询条件切换
     queryChange: function queryChange(e) {
-      this.searchForm.xianhua_commentbackName = "";
+      this.searchForm.xianhua_commentbackName = '';
     },
     // mescroll组件初始化的回调,可获取到mescroll对象
     mescrollInit: function mescrollInit(mescroll) {
@@ -616,7 +616,7 @@ var _default = {
                     hour = currentTime.getHours();
                     minute = currentTime.getMinutes();
                     second = currentTime.getSeconds();
-                    shijian = year + "-" + month + "-" + day + " " + hour + ":" + minute + ":" + second;
+                    shijian = year + '-' + month + '-' + day + ' ' + hour + ':' + minute + ':' + second;
                     data.xianhuaCommentbackYesnoTypes = shenheTypes;
                     data.xianhuaCommentbackShenheTime = shijian;
                     _context8.next = 13;
