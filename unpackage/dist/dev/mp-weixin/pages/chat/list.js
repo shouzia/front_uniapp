@@ -135,7 +135,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
+/* WEBPACK VAR INJECTION */(function(uni) {
 
 var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ 4);
 Object.defineProperty(exports, "__esModule", {
@@ -177,21 +177,52 @@ var _asyncToGenerator2 = _interopRequireDefault(__webpack_require__(/*! @babel/r
 //
 //
 //
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
       // 定时器
       inter: {},
       list: [],
-      chatIssue: ''
+      chatIssue: '',
+      user: {}
     };
   },
+  computed: {
+    baseUrl: function baseUrl() {
+      return this.$base.url;
+    }
+  },
   onLoad: function onLoad() {
-    var _this = this;
-    var inter = setInterval(function () {
-      _this.init();
-    }, 3000);
-    this.inter = inter;
+    var _this2 = this;
+    return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee() {
+      var _this, inter, table, res;
+      return _regenerator.default.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _this = _this2;
+              inter = setInterval(function () {
+                _this.init();
+              }, 3000);
+              _this2.inter = inter;
+              table = uni.getStorageSync('nowTable');
+              _context.next = 6;
+              return _this2.$api.session(table);
+            case 6:
+              res = _context.sent;
+              _this2.user = res.data;
+              console.log(_this2.user);
+            case 9:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }))();
   },
   onUnload: function onUnload() {
     if (this.inter) {
@@ -201,46 +232,22 @@ var _default = {
   },
   methods: {
     onSendTap: function onSendTap() {
-      var _this2 = this;
-      return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee() {
-        return _regenerator.default.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                _context.next = 2;
-                return _this2.$api.save('chat', {
-                  chatIssue: _this2.chatIssue,
-                  zhuangtaiTypes: 1,
-                  chatTypes: 1,
-                  issueTime: _this2.$utils.getDatetimeFormat()
-                });
-              case 2:
-                _this2.chatIssue = '';
-                _this2.init();
-              case 4:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee);
-      }))();
-    },
-    init: function init() {
       var _this3 = this;
       return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee2() {
-        var res;
         return _regenerator.default.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
                 _context2.next = 2;
-                return _this3.$api.page('chat', {
-                  page: 1,
-                  limit: 999
+                return _this3.$api.save('chat', {
+                  chatIssue: _this3.chatIssue,
+                  zhuangtaiTypes: 1,
+                  chatTypes: 1,
+                  issueTime: _this3.$utils.getDatetimeFormat()
                 });
               case 2:
-                res = _context2.sent;
-                _this3.list = res.data.list;
+                _this3.chatIssue = '';
+                _this3.init();
               case 4:
               case "end":
                 return _context2.stop();
@@ -248,10 +255,35 @@ var _default = {
           }
         }, _callee2);
       }))();
+    },
+    init: function init() {
+      var _this4 = this;
+      return (0, _asyncToGenerator2.default)( /*#__PURE__*/_regenerator.default.mark(function _callee3() {
+        var res;
+        return _regenerator.default.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.next = 2;
+                return _this4.$api.page('chat', {
+                  page: 1,
+                  limit: 999
+                });
+              case 2:
+                res = _context3.sent;
+                _this4.list = res.data.list;
+              case 4:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3);
+      }))();
     }
   }
 };
 exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
 
