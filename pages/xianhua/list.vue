@@ -43,7 +43,7 @@
             </uni-drawer>
             <view class="list-box5"
                 :style='{ "padding": "24rpx", "margin": "0", "borderColor": "red", "backgroundColor": "rgba(228, 228, 228, 1)", "borderRadius": "0", "borderWidth": "0", "width": "100%", "borderStyle": "solid", "height": "auto" }'
-                style="box-sizing: border-box; display: flex; justify-content: space-between;">
+                style="box-sizing: border-box; display: flex; flex-wrap: wrap; justify-content: space-between;">
                 <block v-for="(item, index) in list" :key="index" style="display: flex;">
                     <view @tap="onDetailTap(item)" class="list-item"
                         :style='{ "padding": "0", "margin": "12px 0 0 0", "borderColor": "rgba(206, 34, 27, 1)", "backgroundColor": "rgba(255, 255, 255, 1)", "borderRadius": "12rpx", "height": "auto" }'

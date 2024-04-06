@@ -1,58 +1,58 @@
 <template>
-    <mescroll-uni @init="mescrollInit" :up="upOption" :down="downOption" @down="downCallback" @up="upCallback">
+  <mescroll-uni @init="mescrollInit" :up="upOption" :down="downOption" @down="downCallback" @up="upCallback">
 
-        <view class="uni-padding-wrap">
-            <!--header end-->
-            <view class="cu-bar bg-white search">
-                <view class="search-form round">
-                    <text class="cuIcon-search"></text>
-                    <input v-model="searchForm.forumName" type="text" placeholder="标题"></input>
-                </view>
-                <view class="action">
-                    <button @tap="search"
-                            :style="{width:'auto',borderRadius:'8rpx',height:'80rpx',fontSize:'28rpx',color:'rgba(255, 255, 255, 1)'}"
-                            class="cu-btn shadow-blur round">搜索</button>
-                </view>
-            </view>
-            <view class="list">
-                <view class="flex flex-between flex-align-center pl15 pb30">
-                    <text class="f28 col3">论坛专区</text>
-                    <!-- <text class="f24 col9">查看全部</text> -->
-                </view>
-                <view @tap="onDetailTap(item.id)" v-for="(item,index) in list " v-bind:key="index"
-                      class="listm flex flex-between">
-                    <image src="/static/exam-index/paper.png" mode="widthFix" class="listmpic mt10"></image>
-                    <view class="listmr">
-                        <view style="float:right;font-size: 25rpx;">
-                            <text v-if="item.yonghuId != null">
-                                身份：用户
-                            </text>
-							<text v-if="item.usersId!= null">
-                                身份：管理员
-                            </text>
-                        </view>
-                        <view class="col3 f30 elip mb15">{{item.forumName }}</view>
-                        <view class="colb f24 lh35" v-html="item.forumContent.length>50?item.forumContent.substring(0,50)+'... ...':item.forumContent"></view>
-                        <view class="flex flex-align-center mt20">
-                            <text class="colb f25">
-								<text v-if="item.yonghuId != null">
-									发布人：{{item.yonghuName}}（用户）
-								</text>
-								<text v-if="item.usersId!= null">
-                                    发布人：管理员
-                                </text>
-                            </text>
-                        </view>
-                        <view class="flex flex-align-center mt20 colb f25">
-                            发布时间：{{item.insertTime}}
-                        </view>
-                    </view>
-                </view>
-            </view>
-            <!--list end-->
+    <view class="uni-padding-wrap">
+      <!--header end-->
+      <view class="cu-bar bg-white search">
+        <view class="search-form round">
+          <text class="cuIcon-search"></text>
+          <input v-model="searchForm.forumName" type="text" placeholder="标题"></input>
         </view>
-        123
-    </mescroll-uni>
+        <view class="action">
+          <button @tap="search"
+            :style="{ width: 'auto', borderRadius: '8rpx', height: '80rpx', fontSize: '28rpx', color: 'rgba(255, 255, 255, 1)' }"
+            class="cu-btn shadow-blur round">搜索</button>
+        </view>
+      </view>
+      <view class="list">
+        <view class="flex flex-between flex-align-center pl15 pb30">
+          <text class="f28 col3">论坛专区</text>
+          <!-- <text class="f24 col9">查看全部</text> -->
+        </view>
+        <view @tap="onDetailTap(item.id)" v-for="(item, index) in list " v-bind:key="index"
+          class="listm flex flex-between">
+          <image src="/static/exam-index/paper.png" mode="widthFix" class="listmpic mt10"></image>
+          <view class="listmr">
+            <view style="float:right;font-size: 25rpx;">
+              <text v-if="item.yonghuId != null">
+                身份：用户
+              </text>
+              <text v-if="item.usersId != null">
+                身份：管理员
+              </text>
+            </view>
+            <view class="col3 f30 elip mb15">{{ item.forumName }}</view>
+            <view class="colb f24 lh35"
+              v-html="item.forumContent.length > 50 ? item.forumContent.substring(0, 50) + '... ...' : item.forumContent"></view>
+            <view class="flex flex-align-center mt20">
+              <text class="colb f25">
+                <text v-if="item.yonghuId != null">
+                  发布人：{{ item.yonghuName }}（用户）
+                </text>
+                <text v-if="item.usersId != null">
+                  发布人：管理员
+                </text>
+              </text>
+            </view>
+            <view class="flex flex-align-center mt20 colb f25">
+              发布时间：{{ item.insertTime }}
+            </view>
+          </view>
+        </view>
+      </view>
+      <!--list end-->
+    </view>
+  </mescroll-uni>
 </template>
 
 <script>
@@ -120,7 +120,7 @@ export default {
       this.$utils.jump(`../forum/forum-detail?id=${id}`)
     },
     //轮播图跳转
-    onSwiperTap(e) {},
+    onSwiperTap(e) { },
     // 搜索
     async search() {
       let _this = this

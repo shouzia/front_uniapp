@@ -1,403 +1,248 @@
 <template>
   <view class="content">
-    <view
-      @tap="onPageTap('../user-info/userinfo')"
-      class="header"
-      v-bind:class="{ status: isH5Plus }"
-      :style="{ height: '200rpx' }"
-    >
-      <view
-        v-if="tableName == 'yonghu'"
-        class="userinfo"
-        style="margin-bottom: 40rpx"
-      >
-        <view
-          class="face"
-          :style="{
-            padding: '0',
-            margin: '20rpx 20rpx 20rpx 0rpx',
-            width: '150rpx',
-            boxShadow: '0 0 0px rgba(0,0,0,.3)',
-            borderRadius: '100%',
-            height: '150rpx',
-          }"
-        >
-          <image
-            :src="
-              user.yonghuPhoto
-                ? baseUrl + user.yonghuPhoto
-                : '/static/center/face.jpeg'
-            "
-          ></image>
+    <view @tap="onPageTap('../user-info/userinfo')" class="header" v-bind:class="{ status: isH5Plus }"
+      :style="{ height: '200rpx' }">
+      <view v-if="tableName == 'yonghu'" class="userinfo" style="margin-bottom: 40rpx">
+        <view class="face" :style="{
+        padding: '0',
+        margin: '20rpx 20rpx 20rpx 0rpx',
+        width: '150rpx',
+        boxShadow: '0 0 0px rgba(0,0,0,.3)',
+        borderRadius: '100%',
+        height: '150rpx',
+      }">
+          <image :src="user.yonghuPhoto
+          ? baseUrl + user.yonghuPhoto
+          : '/static/center/face.jpeg'
+        "></image>
         </view>
         <view class="info">
-          <view
-            class="username"
-            style="width: 100%; margin-bottom: 10px; padding: 10rpx"
-            :style="{
-              boxShadow: '0 0 16rpx rgba(255,255,255,0)',
-              borderColor: 'rgba(255,255,255,.3)',
-              borderRadius: '90rpx',
-              color: 'rgba(255, 255, 255, 1.0)',
-              textAlign: 'left',
-              borderWidth: '0',
-              lineHeight: '36rpx',
-              fontSize: '35rpx',
-              borderStyle: 'solid',
-            }"
-          >
+          <view class="username" style="width: 100%; margin-bottom: 10px; padding: 10rpx" :style="{
+        boxShadow: '0 0 16rpx rgba(255,255,255,0)',
+        borderColor: 'rgba(255,255,255,.3)',
+        borderRadius: '90rpx',
+        color: 'rgba(255, 255, 255, 1.0)',
+        textAlign: 'left',
+        borderWidth: '0',
+        lineHeight: '36rpx',
+        fontSize: '35rpx',
+        borderStyle: 'solid',
+      }">
             {{ user.yonghuName }}
           </view>
-          <view
-            class="username"
-            style="display: flex; align-items: center"
-            :style="{
-              boxShadow: '0 0 16rpx rgba(255,255,255,0)',
-              backgroundColor: 'rgba(0,0,0,0)',
-              borderColor: 'rgba(255,255,255,.3)',
-              borderRadius: '8rpx',
-              color: 'rgba(255, 255, 255, 1.0)',
-              textAlign: 'left',
-              borderWidth: '0',
-              width: '240rpx',
-              lineHeight: '36rpx',
-              fontSize: '30rpx',
-              borderStyle: 'solid',
-            }"
-          >
+          <view class="username" style="display: flex; align-items: center" :style="{
+        boxShadow: '0 0 16rpx rgba(255,255,255,0)',
+        backgroundColor: 'rgba(0,0,0,0)',
+        borderColor: 'rgba(255,255,255,.3)',
+        borderRadius: '8rpx',
+        color: 'rgba(255, 255, 255, 1.0)',
+        textAlign: 'left',
+        borderWidth: '0',
+        width: '240rpx',
+        lineHeight: '36rpx',
+        fontSize: '30rpx',
+        borderStyle: 'solid',
+      }">
             <span class="cuIcon-pay" style="font-size: 50rpx"></span>：￥{{
-              user.newMoney
-            }}
+        user.newMoney
+      }}
           </view>
         </view>
       </view>
 
-      <view
-        class="setting"
-        :style="{ color: '#fff', fontSize: '50rpx', fontWeight: '10rpx' }"
-      >
+      <view class="setting" :style="{ color: '#fff', fontSize: '50rpx', fontWeight: '10rpx' }">
         <view class="cuIcon-settings"></view>
       </view>
     </view>
     <view class="list">
-      <view
-        @tap="onPageTap('../recharge/recharge')"
-        :style="{
-          padding: '0',
-          boxShadow: '0 0 12rpx rgba(0,0,0,0)',
-          margin: '10rpx 0',
-          backgroundColor: '#9cc8ff',
-          borderColor: 'rgba(126, 102, 90, 0)',
-          borderRadius: '20rpx',
-          borderWidth: '0',
-          width: '100%',
-          borderStyle: 'solid',
-          height: '80rpx',
-        }"
-        class="li"
-        hover-class="hover"
-      >
-        <view
-          v-if="true"
-          :style="{
-            padding: '0',
-            boxShadow: '0 0 12rpx rgba(0,0,0,0)',
-            margin: '0 0 0 16rpx',
-            borderColor: 'rgba(0,0,0,0)',
-            backgroundColor: 'rgba(255, 255, 255, 0)',
-            color: 'rgba(255, 255, 255, 1)',
-            isShow: true,
-            borderRadius: '0',
-            borderWidth: '0',
-            width: '30rpx',
-            lineHeight: '30rpx',
-            fontSize: '50rpx',
-            borderStyle: 'solid',
-          }"
-          class="cuIcon-moneybag"
-        ></view>
-        <view
-          class="text"
-          :style="{
-            padding: '0 30rpx',
-            boxShadow: '0 0 12rpx rgba(0,0,0,0)',
-            margin: '0',
-            borderColor: 'rgba(0,0,0,0)',
-            backgroundColor: 'rgba(0,0,0,0)',
-            color: 'rgba(255, 255, 255, 1)',
-            textAlign: 'left',
-            borderRadius: '0',
-            borderWidth: '0',
-            width: 'calc(100% - 134rpx)',
-            lineHeight: '80rpx',
-            fontSize: '30rpx',
-            borderStyle: 'solid',
-          }"
-        >
-          用户充值</view
-        >
-        <view
-          v-if="true"
-          class="cuIcon-right"
-          :style="{
-            padding: '0 44rpx',
-            boxShadow: '0 0 12rpx rgba(0,0,0,0)',
-            margin: '0',
-            borderColor: 'rgba(0,0,0,0)',
-            backgroundColor: '#9cc8ff',
-            color: 'rgba(255, 255, 255, 1)',
-            isShow: true,
-            borderRadius: '0 20rpx 20rpx 0',
-            borderWidth: '0',
-            width: '28rpx',
-            lineHeight: '80rpx',
-            fontSize: '28rpx',
-            borderStyle: 'solid',
-          }"
-        >
-        </view>
-      </view>
-      <view
-        @tap="onPageTap('../changepassword/changepassword')"
-        :style="{
-          padding: '0',
-          boxShadow: '0 0 12rpx rgba(0,0,0,0)',
-          margin: '10rpx 0',
-          backgroundColor: '#9cc8ff',
-          borderColor: 'rgba(126, 102, 90, 0)',
-          borderRadius: '20rpx',
-          borderWidth: '0',
-          width: '100%',
-          borderStyle: 'solid',
-          height: '80rpx',
-        }"
-        class="li"
-        hover-class="hover"
-      >
-        <view
-          v-if="true"
-          :style="{
-            padding: '0',
-            boxShadow: '0 0 12rpx rgba(0,0,0,0)',
-            margin: '0 0 0 16rpx',
-            borderColor: 'rgba(0,0,0,0)',
-            backgroundColor: 'rgba(255, 255, 255, 0)',
-            color: 'rgba(255, 255, 255, 1)',
-            isShow: true,
-            borderRadius: '0',
-            borderWidth: '0',
-            width: '30rpx',
-            lineHeight: '30rpx',
-            fontSize: '50rpx',
-            borderStyle: 'solid',
-          }"
-          class="cuIcon-moneybag"
-        ></view>
-        <view
-          class="text"
-          :style="{
-            padding: '0 30rpx',
-            boxShadow: '0 0 12rpx rgba(0,0,0,0)',
-            margin: '0',
-            borderColor: 'rgba(0,0,0,0)',
-            backgroundColor: 'rgba(0,0,0,0)',
-            color: 'rgba(255, 255, 255, 1)',
-            textAlign: 'left',
-            borderRadius: '0',
-            borderWidth: '0',
-            width: 'calc(100% - 134rpx)',
-            lineHeight: '80rpx',
-            fontSize: '30rpx',
-            borderStyle: 'solid',
-          }"
-        >
-          修改密码</view
-        >
-        <view
-          v-if="true"
-          class="cuIcon-right"
-          :style="{
-            padding: '0 44rpx',
-            boxShadow: '0 0 12rpx rgba(0,0,0,0)',
-            margin: '0',
-            borderColor: 'rgba(0,0,0,0)',
-            backgroundColor: '#9cc8ff',
-            color: 'rgba(255, 255, 255, 1)',
-            isShow: true,
-            borderRadius: '0 20rpx 20rpx 0',
-            borderWidth: '0',
-            width: '28rpx',
-            lineHeight: '80rpx',
-            fontSize: '28rpx',
-            borderStyle: 'solid',
-          }"
-        >
+
+      <view @tap="onPageTap('../changepassword/changepassword')" :style="{
+        padding: '0',
+        boxShadow: '0 0 12rpx rgba(0,0,0,0)',
+        margin: '10rpx 0',
+        backgroundColor: '#9cc8ff',
+        borderColor: 'rgba(126, 102, 90, 0)',
+        borderRadius: '20rpx',
+        borderWidth: '0',
+        width: '100%',
+        borderStyle: 'solid',
+        height: '80rpx',
+      }" class="li" hover-class="hover">
+        <view v-if="true" :style="{
+        padding: '0',
+        boxShadow: '0 0 12rpx rgba(0,0,0,0)',
+        margin: '0 0 0 16rpx',
+        borderColor: 'rgba(0,0,0,0)',
+        backgroundColor: 'rgba(255, 255, 255, 0)',
+        color: 'rgba(255, 255, 255, 1)',
+        isShow: true,
+        borderRadius: '0',
+        borderWidth: '0',
+        width: '30rpx',
+        lineHeight: '30rpx',
+        fontSize: '50rpx',
+        borderStyle: 'solid',
+      }" class="cuIcon-moneybag"></view>
+        <view class="text" :style="{
+        padding: '0 30rpx',
+        boxShadow: '0 0 12rpx rgba(0,0,0,0)',
+        margin: '0',
+        borderColor: 'rgba(0,0,0,0)',
+        backgroundColor: 'rgba(0,0,0,0)',
+        color: 'rgba(255, 255, 255, 1)',
+        textAlign: 'left',
+        borderRadius: '0',
+        borderWidth: '0',
+        width: 'calc(100% - 134rpx)',
+        lineHeight: '80rpx',
+        fontSize: '30rpx',
+        borderStyle: 'solid',
+      }">
+          修改密码</view>
+        <view v-if="true" class="cuIcon-right" :style="{
+        padding: '0 44rpx',
+        boxShadow: '0 0 12rpx rgba(0,0,0,0)',
+        margin: '0',
+        borderColor: 'rgba(0,0,0,0)',
+        backgroundColor: '#9cc8ff',
+        color: 'rgba(255, 255, 255, 1)',
+        isShow: true,
+        borderRadius: '0 20rpx 20rpx 0',
+        borderWidth: '0',
+        width: '28rpx',
+        lineHeight: '80rpx',
+        fontSize: '28rpx',
+        borderStyle: 'solid',
+      }">
         </view>
       </view>
 
       <block v-for="item in menuList" v-bind:key="item.roleName">
-        <block
-          v-if="role == item.roleName"
-          v-bind:key="index"
-          v-for="(menu, index) in item.backMenu"
-        >
+        <block v-if="role == item.roleName" v-bind:key="index" v-for="(menu, index) in item.backMenu">
           <block v-for="(child, sort) in menu.child">
-            <view
-              :style="{
-                padding: '0',
-                boxShadow: '0 0 12rpx rgba(0,0,0,0)',
-                margin: '10rpx 0',
-                backgroundColor: '#9cc8ff',
-                borderColor: 'rgba(126, 102, 90, 0)',
-                borderRadius: '20rpx',
-                borderWidth: '0',
-                width: '100%',
-                borderStyle: 'solid',
-                height: '80rpx',
-              }"
-              @tap="
-                onPageTap('../' + child.tableName + '/list?userId=' + user.id)
-              "
-              class="li"
-              hover-class="hover"
-            >
-              <view
-                :style="{
-                  padding: '0',
-                  boxShadow: '0 0 12rpx rgba(0,0,0,0)',
-                  margin: '0 0 0 16rpx',
-                  borderColor: 'rgba(0,0,0,0)',
-                  backgroundColor: 'rgba(255, 255, 255, 0)',
-                  color: 'rgba(255, 255, 255, 1)',
-                  isShow: true,
-                  borderRadius: '0',
-                  borderWidth: '0',
-                  width: '30rpx',
-                  lineHeight: '30rpx',
-                  fontSize: '50rpx',
-                  borderStyle: 'solid',
-                }"
-                :class="child.appFrontIcon"
-              ></view>
-              <view
-                :style="{
-                  padding: '0 30rpx',
-                  boxShadow: '0 0 12rpx rgba(0,0,0,0)',
-                  margin: '0',
-                  borderColor: 'rgba(0,0,0,0)',
-                  backgroundColor: 'rgba(0,0,0,0)',
-                  color: 'rgba(255, 255, 255, 1)',
-                  textAlign: 'left',
-                  borderRadius: '0',
-                  borderWidth: '0',
-                  width: 'calc(100% - 134rpx)',
-                  lineHeight: '80rpx',
-                  fontSize: '30rpx',
-                  borderStyle: 'solid',
-                }"
-                class="text"
-                >{{ child.menu }}</view
-              >
-              <view
-                v-if="true"
-                class="cuIcon-right"
-                :style="{
-                  padding: '0 44rpx',
-                  boxShadow: '0 0 12rpx rgba(0,0,0,0)',
-                  margin: '0',
-                  borderColor: 'rgba(0,0,0,0)',
-                  backgroundColor: '69cef0',
-                  color: 'rgba(255, 255, 255, 1)',
-                  isShow: true,
-                  borderRadius: '0 20rpx 20rpx 0',
-                  borderWidth: '0',
-                  width: '28rpx',
-                  lineHeight: '80rpx',
-                  fontSize: '28rpx',
-                  borderStyle: 'solid',
-                }"
-              >
+            <view :style="{
+        padding: '0',
+        boxShadow: '0 0 12rpx rgba(0,0,0,0)',
+        margin: '10rpx 0',
+        backgroundColor: '#9cc8ff',
+        borderColor: 'rgba(126, 102, 90, 0)',
+        borderRadius: '20rpx',
+        borderWidth: '0',
+        width: '100%',
+        borderStyle: 'solid',
+        height: '80rpx',
+      }" @tap="
+        onPageTap('../' + child.tableName + '/list?userId=' + user.id)
+        " class="li" hover-class="hover">
+              <view :style="{
+        padding: '0',
+        boxShadow: '0 0 12rpx rgba(0,0,0,0)',
+        margin: '0 0 0 16rpx',
+        borderColor: 'rgba(0,0,0,0)',
+        backgroundColor: 'rgba(255, 255, 255, 0)',
+        color: 'rgba(255, 255, 255, 1)',
+        isShow: true,
+        borderRadius: '0',
+        borderWidth: '0',
+        width: '30rpx',
+        lineHeight: '30rpx',
+        fontSize: '50rpx',
+        borderStyle: 'solid',
+      }" :class="child.appFrontIcon"></view>
+              <view :style="{
+        padding: '0 30rpx',
+        boxShadow: '0 0 12rpx rgba(0,0,0,0)',
+        margin: '0',
+        borderColor: 'rgba(0,0,0,0)',
+        backgroundColor: 'rgba(0,0,0,0)',
+        color: 'rgba(255, 255, 255, 1)',
+        textAlign: 'left',
+        borderRadius: '0',
+        borderWidth: '0',
+        width: 'calc(100% - 134rpx)',
+        lineHeight: '80rpx',
+        fontSize: '30rpx',
+        borderStyle: 'solid',
+      }" class="text">{{ child.menu }}</view>
+              <view v-if="true" class="cuIcon-right" :style="{
+        padding: '0 44rpx',
+        boxShadow: '0 0 12rpx rgba(0,0,0,0)',
+        margin: '0',
+        borderColor: 'rgba(0,0,0,0)',
+        backgroundColor: '69cef0',
+        color: 'rgba(255, 255, 255, 1)',
+        isShow: true,
+        borderRadius: '0 20rpx 20rpx 0',
+        borderWidth: '0',
+        width: '28rpx',
+        lineHeight: '80rpx',
+        fontSize: '28rpx',
+        borderStyle: 'solid',
+      }">
               </view>
             </view>
           </block>
         </block>
       </block>
 
-      <view
-        @tap="onPageTap('../forum/forum-my')"
-        :style="{
-          padding: '0',
-          boxShadow: '0 0 12rpx rgba(0,0,0,0)',
-          margin: '10rpx 0',
-          backgroundColor: '#9cc8ff',
-          borderColor: 'rgba(126, 102, 90, 0)',
-          borderRadius: '20rpx',
-          borderWidth: '0',
-          width: '100%',
-          borderStyle: 'solid',
-          height: '80rpx',
-        }"
-        class="li"
-        hover-class="hover"
-      >
-        <view
-          v-if="true"
-          :style="{
-            padding: '0',
-            boxShadow: '0 0 12rpx rgba(0,0,0,0)',
-            margin: '0 0 0 16rpx',
-            borderColor: 'rgba(0,0,0,0)',
-            backgroundColor: 'rgba(255, 255, 255, 0)',
-            color: 'rgba(255, 255, 255, 1)',
-            isShow: true,
-            borderRadius: '0',
-            borderWidth: '0',
-            width: '30rpx',
-            lineHeight: '30rpx',
-            fontSize: '50rpx',
-            borderStyle: 'solid',
-          }"
-          class="cuIcon-moneybag"
-        ></view>
-        <view
-          class="text"
-          :style="{
-            padding: '0 30rpx',
-            boxShadow: '0 0 12rpx rgba(0,0,0,0)',
-            margin: '0',
-            borderColor: 'rgba(0,0,0,0)',
-            backgroundColor: 'rgba(0,0,0,0)',
-            color: 'rgba(255, 255, 255, 1)',
-            textAlign: 'left',
-            borderRadius: '0',
-            borderWidth: '0',
-            width: 'calc(100% - 134rpx)',
-            lineHeight: '80rpx',
-            fontSize: '30rpx',
-            borderStyle: 'solid',
-          }"
-        >
-          我的帖子</view
-        >
-        <view
-          v-if="true"
-          class="cuIcon-right"
-          :style="{
-            padding: '0 44rpx',
-            boxShadow: '0 0 12rpx rgba(0,0,0,0)',
-            margin: '0',
-            borderColor: 'rgba(0,0,0,0)',
-            backgroundColor: '69cef0',
-            color: 'rgba(255, 255, 255, 1)',
-            isShow: true,
-            borderRadius: '0 20rpx 20rpx 0',
-            borderWidth: '0',
-            width: '28rpx',
-            lineHeight: '80rpx',
-            fontSize: '28rpx',
-            borderStyle: 'solid',
-          }"
-        >
+      <view @tap="onPageTap('../forum/forum-my')" :style="{
+        padding: '0',
+        boxShadow: '0 0 12rpx rgba(0,0,0,0)',
+        margin: '10rpx 0',
+        backgroundColor: '#9cc8ff',
+        borderColor: 'rgba(126, 102, 90, 0)',
+        borderRadius: '20rpx',
+        borderWidth: '0',
+        width: '100%',
+        borderStyle: 'solid',
+        height: '80rpx',
+      }" class="li" hover-class="hover">
+        <view v-if="true" :style="{
+        padding: '0',
+        boxShadow: '0 0 12rpx rgba(0,0,0,0)',
+        margin: '0 0 0 16rpx',
+        borderColor: 'rgba(0,0,0,0)',
+        backgroundColor: 'rgba(255, 255, 255, 0)',
+        color: 'rgba(255, 255, 255, 1)',
+        isShow: true,
+        borderRadius: '0',
+        borderWidth: '0',
+        width: '30rpx',
+        lineHeight: '30rpx',
+        fontSize: '50rpx',
+        borderStyle: 'solid',
+      }" class="cuIcon-moneybag"></view>
+        <view class="text" :style="{
+        padding: '0 30rpx',
+        boxShadow: '0 0 12rpx rgba(0,0,0,0)',
+        margin: '0',
+        borderColor: 'rgba(0,0,0,0)',
+        backgroundColor: 'rgba(0,0,0,0)',
+        color: 'rgba(255, 255, 255, 1)',
+        textAlign: 'left',
+        borderRadius: '0',
+        borderWidth: '0',
+        width: 'calc(100% - 134rpx)',
+        lineHeight: '80rpx',
+        fontSize: '30rpx',
+        borderStyle: 'solid',
+      }">
+          我的帖子</view>
+        <view v-if="true" class="cuIcon-right" :style="{
+        padding: '0 44rpx',
+        boxShadow: '0 0 12rpx rgba(0,0,0,0)',
+        margin: '0',
+        borderColor: 'rgba(0,0,0,0)',
+        backgroundColor: '69cef0',
+        color: 'rgba(255, 255, 255, 1)',
+        isShow: true,
+        borderRadius: '0 20rpx 20rpx 0',
+        borderWidth: '0',
+        width: '28rpx',
+        lineHeight: '80rpx',
+        fontSize: '28rpx',
+        borderStyle: 'solid',
+      }">
         </view>
       </view>
     </view>
@@ -443,7 +288,7 @@ export default {
   methods: {
     chooseLocation() {
       uni.chooseLocation({
-        success: function (data) {},
+        success: function (data) { },
       })
     },
     onPageTap(url) {
